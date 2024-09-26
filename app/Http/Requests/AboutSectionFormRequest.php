@@ -22,15 +22,15 @@ class AboutSectionFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title'      => 'required|string|max:255',
+            'title'        => 'required|string|max:255',
             'bio'          => 'required|string',
             'birthday'     => 'required|date',
             'phone'        => 'required',
             'address'      => 'required|string|max:255',
-            'languages'  => 'required|string|max:100',
+            'languages'    => 'required|string|max:100',
             'freelance'    => 'required|boolean',
-            'cv_url'       => 'nullable|file|mimes:pdf|max:2048',
-
+            'cv_url'       => 'required|file|mimes:pdf|max:2048',
+            'image_url'    => 'required|image|mimes:png,jpg|max:2048',
         ];
     }
 
@@ -43,9 +43,15 @@ class AboutSectionFormRequest extends FormRequest
             'phone.required'           => 'Please enter a valid phone number.',
             'address.required'    => 'Address is required.',
             'freelance.required'    => 'Please specify your freelance availability.',
+            'cv_url.required'           => 'The CV field is required.',
             'cv_url.file'           => 'The CV must be a file.',
             'cv_url.mimes'          => 'The CV must be a file of type: PDF',
-            'cv_url.max'            => 'The CV may not be larger than 2MB.'
+            'cv_url.max'            => 'The CV may not be larger than 2MB.',
+            'image_url.required'           => 'The About Image field is required.',
+            'image_url.image'           => 'The About Image must be a Image.',
+            'image_url.mimes'          => 'The About Image must be a file of type: PNG,JPG',
+            'image_url.max'            => 'The About Image may not be larger than 2MB.'
         ];
+        
     }
 }

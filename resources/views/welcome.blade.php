@@ -5,7 +5,7 @@
     <section class="st-hero st-style2 st-bg st-dynamic-bg" data-src='{{asset('frontened/img/hero-bg-2.jpg')}}'>
         <div class="container">
             <div class="st-hero-text">
-                <h1>Hi, I am <span>Jhon Doe</span></h1>
+                <h1>Hi, I am <span>{{ ucfirst(Auth::user()->name) }}</span></h1>
                 <p>I am a frontend web developer. I can provide clean code and pixel perfect design. <br>I also make
                     website more & more interactive with web animations.</p>
                 <div class="st-hero-social-links">
@@ -49,22 +49,18 @@
                     <div class="st-vertical-middle">
                         <div class="st-vertical-middle-in">
                             <div class="st-text-block st-style1">
-                                <h2 class="st-text-block-title">Hi There! I'm Edward Davis</h2>
-                                <h4 class="st-text-block-subtitle">Visual Designer</h4>
+                                <h2 class="st-text-block-title">Hi There! I'm {{ ucfirst(Auth::user()->name) }}</h2>
+                                <h4 class="st-text-block-subtitle">{{ isset($about) ? $about->title : '' }}</h4>
                                 <div class="st-text-block-text">
-                                    <p>I am a Visual Designer with a strong focus on digital branding. Visul design
-                                        seeks to attract,
-                                        inspire, create desires and motivate people to respond to messages, with a view
-                                        to making a
-                                        favorable impact.</p>
+                                    <p>{{ isset($about) ? $about->bio : '' }}</p>
                                 </div>
                                 <ul class="st-text-block-details st-mp0">
-                                    <li><span>Birthday</span> : <span>May 07, 1990</span></li>
-                                    <li><span>Phone</span> : <span>+1 876-369-9009</span></li>
-                                    <li><span>Email</span> : <span>devis@example.com</span></li>
-                                    <li><span>From</span> : <span>2661 Hich meadow lane bear creek</span></li>
-                                    <li><span>Language</span> : <span>English, Germanic</span></li>
-                                    <li><span>Freelance</span> : <span>Available</span></li>
+                                    <li><span>Birthday</span> : <span>{{ isset($about) ? $about->birthday->format('d M Y') : '' }}</span></li>
+                                    <li><span>Phone</span> : <span> {{ isset($about) ? $about->phone : '' }} </span></li>
+                                    <li><span>Email</span> : <span>{{ Auth::user()->email }}</span></li>
+                                    <li><span>From</span> : <span>{{ isset($about) ? $about->address : '' }}</span></li>
+                                    <li><span>Language</span> : <span>{{ isset($about) ? $about->languages : '' }}</span></li>
+                                    <li><span>Freelance</span> : <span>{{ $about->freelance == '1' ? 'Available' : 'Not Available' }}</span></li>
                                 </ul>
                                 <div class="st-text-block-btn">
                                     <a href="#" class="st-btn st-style1 st-color1">Download CV</a>

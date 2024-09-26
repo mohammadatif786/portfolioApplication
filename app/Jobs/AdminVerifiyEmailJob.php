@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
-class wAdminVerifiyEmailJob implements ShouldQueue
+class AdminVerifiyEmailJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -22,6 +22,7 @@ class wAdminVerifiyEmailJob implements ShouldQueue
 
     public function __construct($emailDetails)
     {
+
         $this->emailDetails = $emailDetails;
     }
 
@@ -30,6 +31,7 @@ class wAdminVerifiyEmailJob implements ShouldQueue
      */
     public function handle(): void
     {
+        
         Mail::to($this->emailDetails['email'])->send(new AdminVerifyEmial($this->emailDetails));
     }
 }

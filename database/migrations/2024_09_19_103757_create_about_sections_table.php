@@ -16,12 +16,13 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');  
             $table->string('title')->nullable();
             $table->text('bio')->nullable();
-            $table->date('birthday')->nullable();       
-            $table->string('phone')->nullable();       
+            $table->dateTime('birthday')->nullable();       
+            $table->bigInteger('phone')->nullable();       
             $table->string('address')->nullable();      
             $table->string('languages')->nullable();    
-            $table->boolean('freelance')->default(false); 
-            $table->string('cv_url')->nullable();       
+            $table->enum('freelance',['Available for freelance','Not Available']); 
+            $table->string('cv_url')->nullable();  
+            $table->string('image_url')->nullable();  
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -9,7 +9,7 @@
                         <h4 class="font-weight-light text-white">Update About Section</h4>
                     </div>
                     <div class="card-body px-5 py-4">
-                        <form id="aboutFormData" enctype="multipart/form-data">
+                        <form action="{{ route('admin.store.about.section') }}" method="post" enctype="multipart/form-data">
                             @csrf
 
                             <div class="mb-3">
@@ -91,9 +91,9 @@
                                         Availability</label>
                                     <select class="form-select form-select-lg" id="freelance" name="freelance">
                                         <option value="">Please Select</option>
-                                        <option value="0" {{ @$aboutDetails->freelance == 0 ? 'selected' : '' }}>Not
+                                        <option value="Not Available" {{ @$aboutDetails->freelance == 'Not Available' ? 'selected' : '' }}>Not
                                             Available</option>
-                                        <option value="1" {{ @$aboutDetails->freelance == 1 ? 'selected' : '' }}>
+                                        <option value="Available for freelance" {{ @$aboutDetails->freelance == 'Available for freelance' ? 'selected' : '' }}>
                                             Available for Freelance</option>
                                     </select>
                                     {!! \App\Helpers\ErrorHelper::freelance() !!}
@@ -110,13 +110,25 @@
                                         {!! \App\Helpers\ErrorHelper::cv_url() !!}
                                     </div>
                                     <small class="form-text text-muted">Accepted file types: PDF, Max size: 2MB.</small>
+                                </div>
 
+                                
+                                <div class="col-md-6 mb-3">
+                                    <label for="image_url" class="form-label">Upload About Image</label>
+                                    <div class="input-group">
+                                        <input type="file"
+                                            class="form-control form-control-lg @error('image_url') is-invalid @enderror"
+                                            id="image_url" name="image_url" aria-label="Upload About Image">
+                                        <label class="input-group-text" for="image_url">Browse</label>
+                                        {!! \App\Helpers\ErrorHelper::image_url() !!}
+                                    </div>
+                                    <small class="form-text text-muted">Accepted file types: PDF, Max size: 2MB.</small>
                                 </div>
                             </div>
 
                             <!-- Submit Button -->
                             <div class="text-center">
-                                <button type="submit" id="aboutFormSubmit" class="btn btn-primary btn-lg px-5 mt-4">Save
+                                <button type="submit" class="btn btn-primary btn-lg px-5 mt-4">Save
                                     Changes</button>
                             </div>
                         </form>
@@ -126,24 +138,5 @@
         </div>
     </div>
 
-    <script>
-        $(document).ready(function() {
 
-            $('#aboutFormSubmit').on('click', function(e) {
-                e.preventDefault()
-
-                var formData = $("#aboutFormData").serialize();
-
-                $.ajax({
-                    url: '{{ route('admin.store.about.section') }}',
-                    type: 'POST',
-                    data: formData,
-                    success: function(response) {
-                        alert()
-                    }
-                });
-            })
-
-        });
-    </script>
 @endsection

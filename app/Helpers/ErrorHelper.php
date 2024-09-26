@@ -41,7 +41,10 @@ class ErrorHelper
     {
         return self::getError('cv_url');
     }
-
+    public static function image_url()
+    {
+        return self::getError('image_url');
+    }
     private static function getError($field)
     {
         $errors = Session::get('errors');
