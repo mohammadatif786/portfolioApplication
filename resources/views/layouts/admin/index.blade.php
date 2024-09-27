@@ -113,7 +113,11 @@
             toastr.error("{{ session('success') }}");
         @endif
         @if (session('update'))
-            toastr.error("{{ session('success') }}");
+            toastr.success("{{ session('update') }}");
+        @endif
+        
+        @if (session('info'))
+            toastr.info("{{ session('info') }}");
         @endif
     </script>
 </body>

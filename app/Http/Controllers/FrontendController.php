@@ -10,10 +10,8 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        $userId = Auth::user()->id;
-        $about = AboutSection::where('user_id',$userId)->first();
     
-        return view('welcome', compact('about'));
+        return view('landing-page');
     }
 
     public function blog()

@@ -39,7 +39,7 @@
 
             <!-- Users -->
             <li class="menu-item">
-                <a class='menu-link waves-effect waves-light' href='/users'>
+                <a class='menu-link waves-effect waves-light' href='{{ route('admin.user.index') }}'>
                     <span class="menu-icon"><i class="fas fa-users"></i></span>
                     <span class="menu-text"> Users </span>
                 </a>
@@ -56,14 +56,14 @@
                     <ul class="sub-menu">
                         <!-- Role -->
                         <li class="menu-item">
-                            <a class="menu-link" href="{{ route('admin.role.create') }}">
+                            <a class="menu-link" href="{{ route('admin.role.index') }}">
                                 <span class="menu-icon"><i class="fas fa-user-tag"></i></span>
                                 <span class="menu-text">Role</span>
                             </a>
                         </li>
                         <!-- Permission -->
                         <li class="menu-item">
-                            <a class="menu-link" href="/permissions">
+                            <a class="menu-link" href="{{ route('admin.permission.index') }}">
                                 <span class="menu-icon"><i class="fas fa-key"></i></span>
                                 <span class="menu-text">Permission</span>
                             </a>
