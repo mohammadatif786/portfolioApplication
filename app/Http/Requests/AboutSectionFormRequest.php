@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Arr;
 
 class AboutSectionFormRequest extends FormRequest
 {
@@ -28,13 +29,13 @@ class AboutSectionFormRequest extends FormRequest
             'phone'        => 'required',
             'address'      => 'required|string|max:255',
             'languages'    => 'required|string|max:100',
-            'freelance'    => 'required|boolean',
-            'cv_url'       => 'required|file|mimes:pdf|max:2048',
-            'image_url'    => 'required|image|mimes:png,jpg|max:2048',
+            'freelance'    => 'required',
+            'cv_url'       => 'required|file|mimes:pdf',
+            'image_url'    => 'required|image|mimes:png,jpg',
         ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
             'title.required'      => 'Please provide at least one professional title.',

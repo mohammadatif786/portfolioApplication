@@ -41,7 +41,8 @@
             <div class="row">
                 <div class="col-lg-6 wow fadeInLeft">
                     <div class="st-about-img-wrap">
-                        <div class="st-about-img st-dynamic-bg st-bg" data-src="{{ asset('frontened/img/section/about.jpg')}}"></div>
+                        {{-- <div class="st-about-img st-dynamic-bg st-bg" data-src="{{ asset('frontened/img/section/about.jpg')}}"></div> --}}
+                        <div class="st-about-img st-dynamic-bg st-bg" data-src="{{ asset('backend/admin/images/'.$about->image_url)}}"></div>
                     </div>
                     <div class="st-height-b0 st-height-lg-b30"></div>
                 </div>
@@ -50,20 +51,20 @@
                         <div class="st-vertical-middle-in">
                             <div class="st-text-block st-style1">
                                 <h2 class="st-text-block-title">Hi There! I'm {{ ucfirst(Auth::user()->name) }}</h2>
-                                <h4 class="st-text-block-subtitle">{{ isset($about) ? $about->title : '' }}</h4>
+                                <h4 class="st-text-block-subtitle">Full Stack Developer</h4>
                                 <div class="st-text-block-text">
                                     <p>{{ isset($about) ? $about->bio : '' }}</p>
                                 </div>
                                 <ul class="st-text-block-details st-mp0">
-                                    <li><span>Birthday</span> : <span>{{ isset($about) ? $about->birthday->format('d M Y') : '' }}</span></li>
+                                    <li><span>Birthday</span> : <span>{{ isset($about) ? $birthday : '' }}</span></li>
                                     <li><span>Phone</span> : <span> {{ isset($about) ? $about->phone : '' }} </span></li>
                                     <li><span>Email</span> : <span>{{ Auth::user()->email }}</span></li>
                                     <li><span>From</span> : <span>{{ isset($about) ? $about->address : '' }}</span></li>
                                     <li><span>Language</span> : <span>{{ isset($about) ? $about->languages : '' }}</span></li>
-                                    <li><span>Freelance</span> : <span>{{ $about->freelance == '1' ? 'Available' : 'Not Available' }}</span></li>
+                                    <li><span>Freelance</span> : <span>{{ $about->freelance == 'Available for freelance' ? 'Available' : 'Not Available' }}</span></li>
                                 </ul>
                                 <div class="st-text-block-btn">
-                                    <a href="#" class="st-btn st-style1 st-color1">Download CV</a>
+                                    <a href="{{ asset('backend/admin/files/'.$about->cv_url) }}" target="_blank" class="st-btn st-style1 st-color1">Download CV</a>
                                 </div>
                             </div>
                         </div>

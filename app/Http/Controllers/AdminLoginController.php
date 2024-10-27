@@ -17,13 +17,14 @@ class AdminLoginController extends Controller
 
     public function AdminEmailVerify(Request $request)
     {
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-            
+
             $email = $request->input('email');
             $verificationCode = random_int(1000, 9999);
 
@@ -35,9 +36,10 @@ class AdminLoginController extends Controller
                 'subject' => 'Please Verify Your Email', 
             ];
             
-            // AdminVerifiyEmailJob::dispatch($emailDetails);
 
-            // session(['email_verification_code' => $verificationCode], now()->addMinutes(10) );
+            AdminVerifiyEmailJob::dispatch($emailDetails);
+
+            session(['email_verification_code' => $verificationCode], now()->addMinutes(10) );
 
             return view('auth.admin.verify-email-code');
 
@@ -57,25 +59,20 @@ class AdminLoginController extends Controller
     public function AdminEmailCodeVerified(Request $request)
     {
         $email_verification_code = session('email_verification_code');
-        
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Email verified',
-        ]);
+    
+        if($request->email_verified_code == $email_verification_code)
+        {
+            return response()->json([
+                'status' => 'success',
+                'message' => 'Email verified',
+            ]);
 
-        // if($request->email_verified_code == $email_verification_code)
-        // {
-        //     return response()->json([
-        //         'status' => 'success',
-        //         'message' => 'Email verified',
-        //     ]);
-
-        // }else{
+        }else{
             
-        //     return response()->json([
-        //         'status' => 'error',
-        //         'message' => 'Email verification code does not matched',
-        //     ]);
-        // }
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Email verification code does not matched',
+            ]);
+        }
     }
 }

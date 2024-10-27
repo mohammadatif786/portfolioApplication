@@ -24,6 +24,7 @@ class AdminVerifiyEmailJob implements ShouldQueue
     {
 
         $this->emailDetails = $emailDetails;
+
     }
 
     /**

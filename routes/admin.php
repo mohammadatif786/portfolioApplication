@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserManagementController;
+use App\Models\Service;
+use Faker\Guesser\Name;
 
 Route::group(['prefix' => 'admin'],function(){
 
@@ -53,10 +56,10 @@ Route::group(['prefix' => 'admin'],function(){
         
         Route::get('/dashboard',[AdminDashboardController::class,'index'])->name('admin.dashboard');
 
-        Route::get('/update/about/section',[AboutController::class,'index'])->name('admin.about.section');
-
-        Route::post('store/about/section',[AboutController::class,'store'])->name('admin.store.about.section');
+        Route::get('/update/about',[AboutController::class,'index'])->name('admin.about.section');
+        Route::post('store/about',[AboutController::class,'store'])->name('admin.store.about.section');
     
+        Route::get('/services',[ServiceController::class,'index'])->name('admin.services.section');
     });
 
 });

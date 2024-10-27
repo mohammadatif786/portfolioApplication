@@ -45,6 +45,10 @@ class ErrorHelper
     {
         return self::getError('image_url');
     }
+    public static function description()
+    {
+        return self::getError('description');
+    }
     private static function getError($field)
     {
         $errors = Session::get('errors');

@@ -47,12 +47,12 @@
             
             <!-- Roles/Permissions -->
             <li class="menu-item">
-                <a href="#menuComponentsui" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
+                <a href="#menuUserManagementui" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
                     <span class="menu-icon"><i class="fas fa-user-shield"></i></span>
                     <span class="menu-text"> Roles/Permissions </span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="menuComponentsui">
+                <div class="collapse" id="menuUserManagementui">
                     <ul class="sub-menu">
                         <!-- Role -->
                         <li class="menu-item">
@@ -87,6 +87,12 @@
                         <li class="menu-item">
                             <a class="menu-link" href="{{ route('admin.about.section') }}">
                                 <span class="menu-text">About</span>
+                            </a>
+                        </li>
+                        <!-- Service -->
+                        <li class="menu-item">
+                            <a class="menu-link" href="{{ route('admin.services.section') }}">
+                                <span class="menu-text">Services</span>
                             </a>
                         </li>
                     </ul>

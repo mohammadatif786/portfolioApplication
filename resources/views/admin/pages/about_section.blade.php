@@ -13,7 +13,7 @@
                             @csrf
 
                             <div class="mb-3">
-                                <label for="title" class="form-label">Professional Title(s)</label>
+                                <label for="title" class="form-label">Professional Title</label>
                                 <div id="titleWrapper">
                                     <div class="input-group mb-2">
                                         <input type="text"
@@ -49,7 +49,7 @@
                                 <!-- Phone -->
                                 <div class="col-md-6 mb-3">
                                     <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="tel"
+                                    <input type="number"
                                         class="form-control form-control-lg @error('phone') is-invalid @enderror"
                                         id="phone" name="phone" placeholder="+1 234 567 890"
                                         value="{{ $aboutDetails->phone ?? '' }}">

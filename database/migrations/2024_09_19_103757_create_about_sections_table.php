@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->text('bio')->nullable();
             $table->dateTime('birthday')->nullable();       
-            $table->bigInteger('phone')->nullable();       
+            $table->text('phone')->nullable();       
             $table->string('address')->nullable();      
             $table->string('languages')->nullable();    
             $table->enum('freelance',['Available for freelance','Not Available']); 
