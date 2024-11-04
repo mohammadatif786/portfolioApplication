@@ -49,6 +49,20 @@ class ErrorHelper
     {
         return self::getError('description');
     }
+    public static function icon(){
+        return self::getError('icon');
+    }
+    public static function is_active(){
+        return self::getError('is_active');
+    }
+    public static function name()
+    {
+        return self::getError('name');
+    }
+    public static function proficiency()
+    {
+        return self::getError('proficiency');
+    }
     private static function getError($field)
     {
         $errors = Session::get('errors');

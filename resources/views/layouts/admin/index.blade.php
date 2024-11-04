@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -103,6 +104,9 @@
     <script src="{{ asset('backend/admin/dashboardAssets/js/pages/dashboard.js') }}"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 
+    <script src="{{ asset('backend/admin/service.js') }}"></script>
+    <script src="{{ asset('backend/admin/skill.js') }}"></script>
+    <script src="{{ asset('backend/admin/experience.js') }}"></script>
 
     <script>
         // Check for success message in the session

@@ -11,8 +11,8 @@
                             <li><a href="#home" class="st-smooth-move">Home</a></li>
                             <li><a href="#about" class="st-smooth-move">About</a></li>
                             <li><a href="#resume" class="st-smooth-move">Resume</a></li>
-                            <li><a href="#portfolio" class="st-smooth-move">Portfolio</a></li>
-                            <li><a href="{{ route('blog') }}" class="st-smooth-move">Blog</a></li>
+                            <li><a href="#service" class="st-smooth-move">Service</a></li>
+                            <li><a href="#skill" class="st-smooth-move">Skill</a></li>
                             <li><a href="#contact" class="st-smooth-move">Contact</a></li>
                         </ul>
                         <div class="sp-phone">

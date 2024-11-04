@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserManagementController;
+use App\Http\Controllers\Admin\SkillsController;
+use App\Http\Controllers\Admin\ExperienceController;
 use App\Models\Service;
 use Faker\Guesser\Name;
 
@@ -59,7 +61,37 @@ Route::group(['prefix' => 'admin'],function(){
         Route::get('/update/about',[AboutController::class,'index'])->name('admin.about.section');
         Route::post('store/about',[AboutController::class,'store'])->name('admin.store.about.section');
     
+        //Services Route
         Route::get('/services',[ServiceController::class,'index'])->name('admin.services.section');
+        Route::post('/store/service',[ServiceController::class,'store'])->name('admin.store.service.section');
+        Route::get('/get/service/modal',[ServiceController::class,'getServieModal']);
+        Route::get('/service/delete/{id}',[ServiceController::class,'delete']);
+        Route::get('/edit/service/modal/{id}',[ServiceController::class,'edit']);
+        Route::post('/update/service/{id}',[ServiceController::class,'update'])->name('admin.update.service.section');
+        
+
+        //Skills Route 
+        Route::group(['prefix' => 'skills'],function(){
+
+            Route::get('/index',[SkillsController::class,'index'])->name('admin.skills.section');
+            Route::post('/store',[SkillsController::class,'store'])->name('admin.skills.store');
+            Route::get('/modal',[SkillsController::class,'getSkillModal']);
+            Route::get('/edit/{id}',[SkillsController::class,'edit']);
+            Route::post('/update/{id}',[SkillsController::class,'update'])->name('admin.skills.update');
+            Route::get('/delete/{id}',[SkillsController::class,'delete']);
+
+        });
+
+        Route::group(['prefix' => 'experience'],function(){
+
+            Route::get('/index',[ExperienceController::class,'index'])->name('admin.experience.section');
+            Route::get('/modal',[ExperienceController::class,'getexperienceModal']);
+            Route::post('/store',[ExperienceController::class,'store'])->name('admin.experience.store');
+            Route::get('/edit/{id}',[ExperienceController::class,'edit']);
+            Route::post('/update/{id}',[ExperienceController::class,'update'])->name('admin.experience.update');
+            Route::get('/delete/{id}',[ExperienceController::class,'delete']);
+
+        });
     });
 
 });

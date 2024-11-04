@@ -74,30 +74,39 @@
             
 
             <li class="menu-title">Components</li>
-
+            
+            <!-- About -->
             <li class="menu-item">
-                <a href="#menuComponentsui" data-bs-toggle="collapse" class="menu-link waves-effect waves-light">
-                    <span class="menu-icon"> 📄 </span>
-                    <span class="menu-text"> Pages </span>
-                    <span class="menu-arrow"></span>
+                <a class="menu-link waves-effect waves-light" href="{{ route('admin.about.section') }}">
+                    <span class="menu-icon"><i class="fas fa-id-badge"></i></span>
+                    <span class="menu-text">About</span>
                 </a>
-                <div class="collapse" id="menuComponentsui">
-                    <ul class="sub-menu">
-                       <!-- About -->
-                        <li class="menu-item">
-                            <a class="menu-link" href="{{ route('admin.about.section') }}">
-                                <span class="menu-text">About</span>
-                            </a>
-                        </li>
-                        <!-- Service -->
-                        <li class="menu-item">
-                            <a class="menu-link" href="{{ route('admin.services.section') }}">
-                                <span class="menu-text">Services</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </li>
+            
+            <!-- Service -->
+            <li class="menu-item">
+                <a class="menu-link waves-effect waves-light" href="{{ route('admin.services.section') }}">
+                    <span class="menu-icon"><i class="fas fa-headset"></i></span>
+                    <span class="menu-text"> Services</span>
+                </a>
+            </li>
+
+            <!-- Skills -->
+            <li class="menu-item">
+                <a class="menu-link waves-effect waves-light" href="{{ route('admin.skills.section') }}">
+                    <span class="menu-icon"><i class="fas fa-graduation-cap"></i></span>
+                    <span class="menu-text">Skills</span>
+                </a>
+            </li>
+
+            <!-- Experience -->
+            <li class="menu-item">
+                <a class="menu-link waves-effect waves-light" href="{{ route('admin.experience.section') }}">
+                    <span class="menu-icon"><i class="fas fa-briefcase"></i></span>
+                    <span class="menu-text">Experience</span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </div>
