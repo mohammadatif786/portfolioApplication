@@ -107,6 +107,7 @@
     <script src="{{ asset('backend/admin/service.js') }}"></script>
     <script src="{{ asset('backend/admin/skill.js') }}"></script>
     <script src="{{ asset('backend/admin/experience.js') }}"></script>
+    <script src="{{ asset('backend/admin/education.js') }}"></script>
 
     <script>
         // Check for success message in the session

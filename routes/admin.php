@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\SkillsController;
 use App\Http\Controllers\Admin\ExperienceController;
+use App\Http\Controllers\Admin\EducationController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Models\Service;
 use Faker\Guesser\Name;
 
@@ -82,6 +84,7 @@ Route::group(['prefix' => 'admin'],function(){
 
         });
 
+        //Experience Route
         Route::group(['prefix' => 'experience'],function(){
 
             Route::get('/index',[ExperienceController::class,'index'])->name('admin.experience.section');
@@ -92,6 +95,21 @@ Route::group(['prefix' => 'admin'],function(){
             Route::get('/delete/{id}',[ExperienceController::class,'delete']);
 
         });
+
+        //Education Route
+        Route::group(['prefix' => 'education'], function(){
+
+            Route::get('/index',[EducationController::class,'index'])->name('admin.education.section');
+            Route::get('/modal',[EducationController::class,'geteducationModal']);
+            Route::post('/store',[EducationController::class,'store'])->name('admin.education.store');
+            Route::get('/edit/{id}',[EducationController::class,'edit']);
+            Route::post('/update/{id}',[EducationController::class,'update'])->name('admin.education.update');
+            Route::get('/delete/{id}',[EducationController::class,'delete']);
+
+        });
+
+
+        Route::post('/contact/index',[ContactController::class,'index'])->name('admin.contact.index');
     });
 
 });

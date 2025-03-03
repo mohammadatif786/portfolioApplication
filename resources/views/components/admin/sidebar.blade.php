@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <div class="logo-box">
         <!-- Brand Logo Light -->
-        <a class='logo-light' href='{{ route('admin.dashboard') }}'>
+        <a class='logo-light' href="{{ route('admin.dashboard') }}">
 
             <img src="{{ asset('backend/admin/dashboardAssets/images/logo-light.png') }}" alt="logo" class="logo-lg"
                 height="28">
@@ -12,7 +12,7 @@
         </a>
 
         <!-- Brand Logo Dark -->
-        <a class='logo-dark' href='{{ route('admin.dashboard') }}'>
+        <a class='logo-dark' href="{{ route('admin.dashboard') }}">
 
             <img src="{{ asset('backend/admin/dashboardAssets/images/logo-dark.png') }}" alt="dark logo" class="logo-lg"
                 height="28">
@@ -30,7 +30,7 @@
 
             <!-- Dashboard -->
             <li class="menu-item">
-                <a class='menu-link waves-effect waves-light' href='{{ route('admin.dashboard') }}'>
+                <a class='menu-link waves-effect waves-light' href="{{ route('admin.dashboard') }}">
                     <span class="menu-icon"><i class="bx bx-home-smile"></i></span>
                     <span class="menu-text"> Dashboards </span>
                 </a>
@@ -39,7 +39,7 @@
 
             <!-- Users -->
             <li class="menu-item">
-                <a class='menu-link waves-effect waves-light' href='{{ route('admin.user.index') }}'>
+                <a class='menu-link waves-effect waves-light' href="{{ route('admin.user.index') }}">
                     <span class="menu-icon"><i class="fas fa-users"></i></span>
                     <span class="menu-text"> Users </span>
                 </a>
@@ -104,6 +104,14 @@
                 <a class="menu-link waves-effect waves-light" href="{{ route('admin.experience.section') }}">
                     <span class="menu-icon"><i class="fas fa-briefcase"></i></span>
                     <span class="menu-text">Experience</span>
+                </a>
+            </li>
+
+            <!-- Education -->
+            <li class="menu-item">
+                <a class="menu-link waves-effect waves-light" href="{{ route('admin.education.section') }}">
+                    <span class="menu-icon"><i class="fas fa-book-reader"></i></span>
+                    <span class="menu-text">Education</span>
                 </a>
             </li>
 

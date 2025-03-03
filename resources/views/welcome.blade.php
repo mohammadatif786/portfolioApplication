@@ -207,37 +207,19 @@
                         </div>
                         <div class="st-height-b50 st-height-lg-b30"></div>
 
-                        <div class="st-resume-timeline-wrap">
-                            <div class="st-resume-timeline">
-                                <h3 class="st-resume-timeline-title">Master of Computer Science</h3>
-                                <div class="st-resume-timeline-duration">2015 - 2016</div>
-                                <h4 class="st-resume-timeline-subtitle">University of XYZ</h4>
-                                <div class="st-resume-timeline-text">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                                        ligula nulla, tincidunt id faucibus sed, suscipit feugiat turpis.</p>
-                                </div>
-                            </div> <!-- st-resume-timeline -->
-                            <div class="st-height-b50 st-height-lg-b30"></div>
-                            <div class="st-resume-timeline">
-                                <h3 class="st-resume-timeline-title">Bachelor of Computer Science</h3>
-                                <div class="st-resume-timeline-duration">2010 - 2014</div>
-                                <h4 class="st-resume-timeline-subtitle">University of ABC</h4>
-                                <div class="st-resume-timeline-text">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                                        ligula nulla, tincidunt id faucibus sed, suscipit feugiat turpis.</p>
-                                </div>
-                            </div> <!-- st-resume-timeline -->
-                            <div class="st-height-b50 st-height-lg-b30"></div>
-                            <div class="st-resume-timeline">
-                                <h3 class="st-resume-timeline-title">Diploma in Computer Science</h3>
-                                <div class="st-resume-timeline-duration">2006 - 2010</div>
-                                <h4 class="st-resume-timeline-subtitle">XYZ Institution</h4>
-                                <div class="st-resume-timeline-text">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                                        ligula nulla, tincidunt id faucibus sed, suscipit feugiat turpis.</p>
-                                </div>
-                            </div> <!-- st-resume-timeline -->
-                        </div>
+                        @foreach($educations as $education)
+                            <div class="st-resume-timeline-wrap">
+                                <div class="st-resume-timeline">
+                                    <h3 class="st-resume-timeline-title">{{ $education->degree }}</h3>
+                                    <div class="st-resume-timeline-duration">{{ $education->start_date }} - {{ $education->end_date }}</div>
+                                    <h4 class="st-resume-timeline-subtitle">{{ $education->institution }}</h4>
+                                    <div class="st-resume-timeline-text">
+                                        <p>{{ $education->description }}</p>
+                                    </div>
+                                </div> <!-- st-resume-timeline -->
+                                <div class="st-height-b50 st-height-lg-b30"></div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -252,7 +234,7 @@
         <div class="container">
             <div class="st-section-heading st-style1">
                 <h4 class="st-section-heading-title">BLOG</h4>
-                <h2 class="st-section-heading-subtitle">LATEST NEWS</h2>
+                <h2 class="st-section-heading-subtitle">BLOGS</h2>
             </div>
             <div class="st-height-b25 st-height-lg-b25"></div>
         </div>
@@ -279,91 +261,6 @@
                                     </div>
                                     <h4 class="st-post-title"><a href='{{ route('blog') }}'>What are the latest trends
                                             in Graphic design according to you?</a></h4>
-                                </div>
-                            </div>
-                        </div><!-- .slick-slide-in -->
-                        <div class="slick-slide-in">
-                            <div class="st-post-single st-style1">
-                                <a class='st-post-thumb st-zoom' href='{{ route('blog') }}'>
-                                    <img src="{{asset('frontened/img/blog/blog2.jpg')}}" class="st-zoom-in" alt="blog2">
-                                </a>
-                                <div class="st-post-info">
-                                    <div class="st-post-date">
-                                        By:
-                                        <a href="#" class="st-post-author">Admin</a>
-                                        <span class="st-post-date-divider">|</span>
-                                        <span class="st-post-publish-date">27-09-2020</span>
-                                    </div>
-                                    <h4 class="st-post-title"><a href='{{ route('blog') }}'>What do you think makes
-                                            someone a good designer?</a></h4>
-                                </div>
-                            </div>
-                        </div><!-- .slick-slide-in -->
-                        <div class="slick-slide-in">
-                            <div class="st-post-single st-style1">
-                                <a class='st-post-thumb st-zoom' href='{{ route('blog') }}'>
-                                    <img src="{{asset('frontened/img/blog/blog3.jpg')}}" class="st-zoom-in" alt="blog3">
-                                </a>
-                                <div class="st-post-info">
-                                    <div class="st-post-date">
-                                        By:
-                                        <a href="#" class="st-post-author">Admin</a>
-                                        <span class="st-post-date-divider">|</span>
-                                        <span class="st-post-publish-date">27-09-2020</span>
-                                    </div>
-                                    <h4 class="st-post-title"><a href='{{ route('blog') }}'>Were there any mistakes
-                                            you’ve made as a designer</a></h4>
-                                </div>
-                            </div>
-                        </div><!-- .slick-slide-in -->
-                        <div class="slick-slide-in">
-                            <div class="st-post-single st-style1">
-                                <a class='st-post-thumb st-zoom' href='{{ route('blog') }}'>
-                                    <img src="{{asset('frontened/img/blog/blog1.jpg')}}" class="st-zoom-in" alt="blog1">
-                                </a>
-                                <div class="st-post-info">
-                                    <div class="st-post-date">
-                                        By:
-                                        <a href="#" class="st-post-author">Admin</a>
-                                        <span class="st-post-date-divider">|</span>
-                                        <span class="st-post-publish-date">27-09-2020</span>
-                                    </div>
-                                    <h4 class="st-post-title"><a href='{{ route('blog') }}'>What are the latest trends
-                                            in Graphic design according to you?</a></h4>
-                                </div>
-                            </div>
-                        </div><!-- .slick-slide-in -->
-                        <div class="slick-slide-in">
-                            <div class="st-post-single st-style1">
-                                <a class='st-post-thumb st-zoom' href='{{ route('blog') }}'>
-                                    <img src="{{asset('frontened/img/blog/blog2.jpg')}}" class="st-zoom-in" alt="blog2">
-                                </a>
-                                <div class="st-post-info">
-                                    <div class="st-post-date">
-                                        By:
-                                        <a href="#" class="st-post-author">Admin</a>
-                                        <span class="st-post-date-divider">|</span>
-                                        <span class="st-post-publish-date">27-09-2020</span>
-                                    </div>
-                                    <h4 class="st-post-title"><a href='{{ route('blog') }}'>What do you think makes
-                                            someone a good designer?</a></h4>
-                                </div>
-                            </div>
-                        </div><!-- .slick-slide-in -->
-                        <div class="slick-slide-in">
-                            <div class="st-post-single st-style1">
-                                <a class='st-post-thumb st-zoom' href='{{ route('blog') }}'>
-                                    <img src="{{asset('frontened/img/blog/blog3.jpg')}}" class="st-zoom-in" alt="blog3">
-                                </a>
-                                <div class="st-post-info">
-                                    <div class="st-post-date">
-                                        By:
-                                        <a href="#" class="st-post-author">Admin</a>
-                                        <span class="st-post-date-divider">|</span>
-                                        <span class="st-post-publish-date">27-09-2020</span>
-                                    </div>
-                                    <h4 class="st-post-title"><a href='{{ route('blog') }}'>Were there any mistakes
-                                            you’ve made as a designer</a></h4>
                                 </div>
                             </div>
                         </div><!-- .slick-slide-in -->
@@ -395,7 +292,8 @@
                 <div class="col-lg-6">
                     <h3 class="st-contact-title">Just say Hello</h3>
                     <div id="st-alert"></div>
-                    <form action="#" method="POST" class="st-contact-form" id="contact-form">
+                    <form action="{{ route('admin.contact.index') }}" method="POST" class="st-contact-form">
+                        @csrf
                         <div class="st-form-field">
                             <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
@@ -408,7 +306,7 @@
                         <div class="st-form-field">
                             <textarea cols="30" rows="10" id="msg" name="msg" placeholder="Your Message" required></textarea>
                         </div>
-                        <button class="st-btn st-style1 st-color1" type="submit" id="submit" name="submit">Send
+                        <button class="st-btn st-style1 st-color1" type="submit" name="submit">Send
                             message</button>
                     </form>
                 </div>
@@ -418,32 +316,28 @@
                     <div class="st-height-b0 st-height-lg-b40"></div>
                     <h3 class="st-contact-title">Contact Info</h3>
                     <div class="st-contact-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ligula nulla tincidunt id faucibus
-                        sed
-                        suscipit feugiat.
+                        {{ isset($about) ? $about->bio : '' }}
                     </div>
                     <div class="st-contact-info-wrap">
                         <div class="st-single-contact-info">
                             <i class="fas fa-envelope"></i>
                             <div class="st-single-info-details">
                                 <h4>Email</h4>
-                                <a href="#">devis@example.com</a>
-                                <a href="#">info@support.com</a>
+                                <a href="#">{{ isset($userData) ? $userData->email : '' }}</a>
                             </div>
                         </div>
                         <div class="st-single-contact-info">
                             <i class="fas fa-phone-alt"></i>
                             <div class="st-single-info-details">
                                 <h4>Phone</h4>
-                                <span>+1 876-369-9009</span>
-                                <span>+1 213-519-1786</span>
+                                <span>{{ isset($about) ? $about->phone : '' }}</span>
                             </div>
                         </div>
                         <div class="st-single-contact-info">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="st-single-info-details">
                                 <h4>Address</h4>
-                                <span>2661 High Meadow Lane Bear Creek, <br>Olancha, KY 93544</span>
+                                <span>{{ isset($about) ? $about->address : '' }}</span>
                             </div>
                         </div>
                         <div class="st-social-info">
